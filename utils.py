@@ -1,3 +1,6 @@
+'''
+this file is used to calculate the quality prediction of the dataset using three metrics, visibility, exposure, and distribution visibility.
+'''
 import torch
 import torch.nn as nn
 import numpy as np
@@ -10,6 +13,8 @@ import os
 import cv2
 import numpy as np
 import pandas as pd
+from tqdm import tqdm
+
 
 def cal_visibility_based_on_chan_vese(I, label):
     """calculate visibility within each box, namely the ratio of foreground pixels in the box
@@ -180,8 +185,8 @@ def quality_prediction_of_dataset(path):
 
 
 def quality_prediction_of_dataset_save_csv(path, df):
-    from tqdm import tqdm
-    """quality prediction of dataset
+    """1. calculate quality prediction based on visibility, exposure, and distribution of visibility 
+       2. save result to dataframe
     Args:
         path (_type_): path of dataset
     """
