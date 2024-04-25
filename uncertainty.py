@@ -11,7 +11,7 @@ sys.path.append('/Data4/student_zhihan_data/source_code/yolo/ultralytics')
 from ultralytics.utils.plotting import Annotator, Colors
 from ultralytics import YOLO
 
-'''this file is used to calculate the entropy of predicted bounding boxes to quantify the uncertainty'''
+'''this file is used to calculate the entropy of predicted bounding boxes to quantify uncertainty'''
 
 def cal_entropy(prob):
     """
